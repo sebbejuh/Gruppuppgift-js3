@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="container d-flex">
         <Link to="/" className="brand">
-          <FaHotjar></FaHotjar>
+          <FaHotjar /> <span>Fruits</span>
         </Link>
         <ul className="nav-links d-flex">
           <li>

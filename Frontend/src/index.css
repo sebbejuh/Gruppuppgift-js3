@@ -9,51 +9,15 @@ html, body {
 }
 
 .container {
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
-
+    height: 7rem;
 }
 
 .d-flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.navbar {
-    background-color: #ffffff;
-    padding: 0 1rem;
-    
-}
-
-.navbar a {
-    text-decoration: none;
-    color: #000;
-    font-size: 1.2rem;
-    height: 100%;
-    display: flex;
-    align-items: stretch;
-    padding: .25rem;
-}
-
-.navbar li.active {
-    background-color: #555;
-    border-radius: 20%;
-}
-
-.navbar li:hover {
-    background-color: #777;
-    border-radius: 20%;
-}
-
-.navbar .brand {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #000;
-}
-.nav-links {
-    list-style: none;
-    gap: 2rem;
 }
 
 
