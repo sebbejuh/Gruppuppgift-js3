@@ -1,8 +1,15 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 
+//components
 import Navbar from './components/Navbar'
 
+//sass files
+import "./index.scss"
+import "./App.scss"
+
+
+//pages
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
