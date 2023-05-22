@@ -11,13 +11,15 @@
     "server": "nodemon ../Backend/server"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^7.2.0",
     "nodemon": "^2.0.22",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.11.2"
+    "react-router-dom": "^6.11.2",
+    "redux": "^4.2.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
