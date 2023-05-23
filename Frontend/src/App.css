@@ -126,6 +126,7 @@
   background: red;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 .contact-form-box .contact-button {
   margin-top: 1rem;
@@ -138,6 +139,7 @@
   border-radius: none;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 
 * {
