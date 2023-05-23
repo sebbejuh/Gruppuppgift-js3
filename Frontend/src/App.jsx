@@ -18,6 +18,7 @@ import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 
 const App = () => {
+  // const [user, setUser] = useState(null);
   return (
     <>
     <Navbar/>
@@ -27,9 +28,12 @@ const App = () => {
             <Route path='login' element={<Login/>} />
             <Route path='register' element={<Register/>} />
             <Route path='products' element={<Products/>} />
+            <Route path='contact' element={<Contact/>} />
             <Route path='cart' element={<Cart/>} />
         </Routes>
     </div>
     </>
   )
 }
+
+export default App;
