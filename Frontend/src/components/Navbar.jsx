@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Link, NavLink } from "react-router-dom";
 import { FaHotjar } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
