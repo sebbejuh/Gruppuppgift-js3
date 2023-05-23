@@ -121,6 +121,7 @@
 }
 .contact-form-box .contact-form .contact-checkbox label {
   font-size: 0.7rem;
+  cursor: pointer;
 }
 .contact-form-box .contact-form .contact-checkbox input[type=checkbox] {
   background: red;
