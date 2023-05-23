@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 //components
@@ -17,6 +18,7 @@ import Products from './pages/Products'
 import Cart from './pages/Cart'
 
 const App = () => {
+  const [user, setUser] = useState(null)
   return (
     <>
     <Navbar/>
