@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 
 const Register = () => {
     const [formData, setFormData] = useState({
-        username: "",
+        userName: "",
         password: "",
 
     });
@@ -38,8 +38,8 @@ const Register = () => {
       <form onSubmit={handleSubmit} className="form-group">
         
         <div className="form-group">
-            <label htmlFor="username">Username*</label>
-            <input type="text" name="username" value={formData.username} onChange={handleChange} />
+            <label htmlFor="userName">Username*</label>
+            <input type="text" name="userName" value={formData.userName} onChange={handleChange} />
         </div>
 
         <div className="form-group">
