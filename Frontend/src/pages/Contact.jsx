@@ -38,10 +38,10 @@ const Contact = () => {
                         Save my name, email, and website in this browser for the next time I comment.
                     </label>
                 </div>
+                <div className="contact-button">
+                    <button>Submit</button>
+                </div>
             </form>
-            <div className="contact-button">
-                <button>Submit</button>
-            </div>
         </div>
     );
 };
