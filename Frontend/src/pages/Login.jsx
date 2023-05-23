@@ -1,35 +1,10 @@
-import React, { useState } from "react";
+
 import { NavLink } from "react-router-dom";
 
 
 const Login = () => {
 
-const [loginData, setLoginData] = useState({
-  username: '',
-  password: ''
-})
 
-
-const handleChange = (e) => {
-  setLoginData(prevData => {
-    return {
-      ...prevData,
-      [e.target.name]: e.target.value
-    }
-  })
-}
-
-const handleSubmit = async e => {
-  e.preventDefault()
-  const res = await fetch('http://localhost:7777/api/users/login', {
-    method: "POST",
-    headers: {
-      "content-Type": "application/json"
-    },
-    body: JSON.stringify(loginData)
-  })
-  
-}
 
   return (
     <div className="login-form-box">
@@ -37,20 +12,20 @@ const handleSubmit = async e => {
       <p>Please Login to Your Account</p>
       <div className="login-title-border"/>
       </div>
-     <form className="login-form" onSubmit={handleSubmit}>
+     <form className="login-form" >
       <div className="login-input">
         <div className="register-link">
           <label htmlFor="username">Username*</label>
           <NavLink to="/register" className="link"><span>Don't have an Account yet?</span></NavLink>
         </div>
-         <input type="text" name="username" id="username" value={loginData.username} onChange={handleChange}/>
+         <input type="text" name="username" id="username" />
       </div>
         <div className="login-input">
           <div className="forgot-pw">
             <label htmlFor="password">Password*</label>
           <NavLink to="#" className="link"><span>Forgot Your Password ?</span></NavLink>
           </div>
-            <input type="password" name="password" id="password" value={loginData.password} onChange={handleChange}/>
+            <input type="password" name="password" id="password" />
         </div>
         <div className="login-checkbox">
           <input type="checkbox" name="checkbox" id="remember"/>
