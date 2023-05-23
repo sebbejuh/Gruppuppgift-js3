@@ -8,13 +8,8 @@ const Register = () => {
       <form className="form-group">
         
         <div className="form-group">
-            <label htmlFor="firstName">First name*</label>
+            <label htmlFor="firstName">Username*</label>
             <input type="text" name="lastName" id="firstName" />
-        </div>
-        
-        <div className="form-group">
-            <label htmlFor="email">E-mail*</label>
-            <input type="email" name="email" id="email" />
         </div>
 
         <div className="form-group">
