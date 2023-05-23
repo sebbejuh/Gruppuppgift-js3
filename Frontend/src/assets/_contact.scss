@@ -1,0 +1,89 @@
+.contact-form-box {
+    padding: 2rem;
+    box-shadow: 0px 10px 15px -3px rgba(164, 164, 164, 0.1);
+
+    .contact-title {
+        font-size: 0.8rem;
+        margin: 0.5rem 0 1rem 0;
+    }
+
+    .contact-title-border {
+        margin-top: 0.5rem;
+        border-bottom: 1px solid lightslategray;
+        width: 5%;
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .contact-input-box {
+            display: flex;
+            gap: 1rem;
+
+            .contact-input {
+                flex: 1;
+
+                label {
+                    display: block;
+                    margin-bottom: 0.5rem;
+                }
+
+                input {
+                    width: 100%;
+                    padding: 0.5rem;
+                    background: whitesmoke;
+                    border: none;
+                    outline: none;
+                }
+            }
+        }
+
+        .contact-textfield {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            label {
+                display: block;
+                margin-bottom: 0.5rem;
+            }
+
+            textarea {
+                padding: 0.5rem;
+                background: whitesmoke;
+                border: none;
+                outline: none;
+                resize: none;
+            }
+        }
+
+        .contact-checkbox {
+            display: inline-flex;
+            gap: 10px;
+
+            label {
+                font-size: 0.7rem;
+            }
+
+            input[type="checkbox"] {
+                background: red;
+                border: none;
+                outline: none;
+            }
+        }
+    }
+    .contact-button {
+        margin-top: 1rem;
+        button {
+            font-size: 0.8rem;
+            color: white;
+            background: crimson;
+            padding: 0.5rem 2rem;
+            border-radius: none;
+            border: none;
+            outline: none;
+        }
+    }
+}
