@@ -1,14 +1,53 @@
-.submit-btn {
-    background-color: #c73e3e;
-    border: none;
-    color: white;
-    padding: 13px 50px;
-    text-decoration: none;
-    font-size: 15px;
-}
-.from-page {
+.form-page {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 1.5rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    label {
+        font-size: 1rem;
+        color:rgba(0, 0, 0, 0.5)
+    }
+    input {
+        padding: 10px;
+        border: none;
+        margin-top: 5px;
+        font-size: 1rem;
+        background-color: rgb(247, 247, 247);        
+    }
+}
+
+.policy {
+    margin-bottom: 20px;
+    label {
+        margin: 10px;
+    }
+}
+
+.already {
+    margin-bottom: 1.3rem;
+    a {
+        color: rgb(117, 117, 255);
+    }
+}
+
+
+
+.submit-btn {
+    background-color: #c73e3e;
+    border: none;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    width: 6rem;
+    height: 2.5rem;
 }
