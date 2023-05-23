@@ -20,11 +20,11 @@ const Contact = () => {
                 </div>
                 <div className="contact-input-box">
                     <div className="contact-input">
-                        <label htmlFor="phone">Your Name*</label>
+                        <label htmlFor="phone">Phone Number*</label>
                         <input type="text" id="phone" />
                     </div>
                     <div className="contact-input">
-                        <label htmlFor="comapny">Your Email*</label>
+                        <label htmlFor="company">Company (Optional)</label>
                         <input type="text" id="company" />
                     </div>
                 </div>
