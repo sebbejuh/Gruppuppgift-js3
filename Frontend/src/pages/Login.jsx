@@ -30,7 +30,8 @@ const Login = () => {
   };
 
   return (
-    <div className="login-form-box">
+    <div className="login-container" >
+      <div className="login-form-box">
       <div className="login-title">
         <p>Please Login to Your Account</p>
         <div className="login-title-border" />
@@ -73,6 +74,8 @@ const Login = () => {
         <button className="login-btn">Submit</button>
       </form>
     </div>
+    </div>
+    
   );
 };
 
