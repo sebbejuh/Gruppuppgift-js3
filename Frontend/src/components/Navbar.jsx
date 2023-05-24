@@ -9,13 +9,15 @@ const Navbar = () => {
     const { token, updateToken } = useContext(AuthContext);
     const [isLoggedIn, setIsLoggedIn] = useState(!!token);
 
+    const navigate = useNavigate();
+
     useEffect(() => {
         setIsLoggedIn(!!token);
     }, [token]);
 
     const handleLogout = () => {
         updateToken(null);
-        Navigate("/");
+        navigate("/");
     };
 
     return (
