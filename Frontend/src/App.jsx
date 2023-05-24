@@ -15,6 +15,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Products from "./pages/Products";
+import ProductDetails from './pages/ProductDetails';
 import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import { AuthProvider } from "./context/AuthContext";
@@ -35,7 +36,8 @@ const App = () => {
                         <Route path="contact" element={<Contact />} />
                         <Route path="cart" element={<Cart />} />
                         
-                    </Routes>
+                        <Route path="/products/:id" element={<ProductDetails/>} />
+        </Routes>
                     <Footer/>
                 </div>
             </AuthProvider>
