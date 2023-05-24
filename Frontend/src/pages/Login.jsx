@@ -58,16 +58,16 @@ const Login = () => {
               <span>Forgot Your Password ?</span>
             </NavLink>
           </div>
-          <input type="password" name="password" id="password" />
-        </div>
-        <div className="login-checkbox">
           <input
-            type="checkbox"
-            name="checkbox"
-            id="remember"
+            type="password"
+            name="password"
+            id="password"
             value={loginData.password}
             onChange={handleChange}
           />
+        </div>
+        <div className="login-checkbox">
+          <input type="checkbox" name="checkbox" id="remember" />
           <label htmlFor="checkbox">Please keep me logged in</label>
         </div>
         <button className="login-btn">Submit</button>
