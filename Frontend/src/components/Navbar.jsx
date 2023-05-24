@@ -20,11 +20,12 @@ const Navbar = () => {
                         Authorization: `Bearer ${token}`,
                     },
                 });
+                console.log(token);
                 const data = await res.json();
                 if (data) {
                     setUser(data);
+                    setIsLoggedIn(!!token);
                 }
-                setIsLoggedIn(!!token);
             } catch (error) {
                 console.log("Error fetching user data:", error);
             }
