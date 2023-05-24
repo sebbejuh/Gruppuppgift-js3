@@ -9,9 +9,11 @@ html, body {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 79.65vh;
   position: relative;
 }
 
