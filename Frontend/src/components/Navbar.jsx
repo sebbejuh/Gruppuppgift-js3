@@ -40,7 +40,7 @@ const Navbar = () => {
 
     return (
         <nav className="navbar">
-            <div className="container d-flex">
+            <div className="navbar-div">
                 <Link to="/" className="brand">
                     <FaHotjar /> <span>Fruits</span>
                 </Link>
