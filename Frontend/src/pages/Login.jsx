@@ -31,7 +31,7 @@ const Login = () => {
             body: JSON.stringify(loginData),
         });
         const data = await res.json();
-        updateToken(data);
+        updateToken(data.token);
         navigate("/");
     };
 
