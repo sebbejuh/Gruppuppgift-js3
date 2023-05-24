@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Login = () => {
   const [loginData, setLoginData] = useState({
-    username: "",
+    userName: "",
     password: "",
   });
 
@@ -38,16 +38,16 @@ const Login = () => {
       <form className="login-form" onSubmit={handleSubmit}>
         <div className="login-input">
           <div className="register-link">
-            <label htmlFor="username">Username*</label>
+            <label htmlFor="userName">Username*</label>
             <NavLink to="/register" className="link">
               <span>Don't have an Account yet?</span>
             </NavLink>
           </div>
           <input
             type="text"
-            name="username"
-            id="username"
-            value={loginData.username}
+            name="userName"
+            id="userName"
+            value={loginData.userName}
             onChange={handleChange}
           />
         </div>
