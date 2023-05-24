@@ -2,18 +2,19 @@ import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 
 const Products = () => {
-  const [products, setProducts] = useState([]); //using useState hook to create products state variable as an array
+    const [products, setProducts] = useState([]); //using useState hook to create products state variable as an array
 
-  useEffect(() => {                             //using hook
-    fetch('http://localhost:7777/api/products/')//using fetch to get all products
-      .then(res => res.json())
-      .then(data => {
-        setProducts(data);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  }, []);
+    useEffect(() => {
+        //using hook
+        fetch("http://localhost:7777/api/products/") //using fetch to get all products
+            .then((res) => res.json())
+            .then((data) => {
+                setProducts(data);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }, []);
 
   return (
     <>
@@ -32,5 +33,3 @@ const Products = () => {
     </>
   );
 }
-
-export default Products
