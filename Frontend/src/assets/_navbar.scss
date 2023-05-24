@@ -4,7 +4,11 @@
     width:60%;
     margin-left: 20%;
 }
-
+.navbar-div{
+display: flex;
+justify-content: space-between;
+height: 10vh;
+}
 .navbar a {
     text-decoration: none;
     color: #000;
