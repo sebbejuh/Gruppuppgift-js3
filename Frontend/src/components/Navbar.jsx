@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const Navbar = () => {
     const { token, updateToken } = useContext(AuthContext);
     const [isLoggedIn, setIsLoggedIn] = useState(!!token);
-    const [userData, setUserData] = useState({ userName: "Loading..." });
+    const [userData, setUserData] = useState({});
 
     const navigate = useNavigate();
 
