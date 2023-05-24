@@ -1,33 +1,39 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-  const [formData, setFormData] = useState({
-    userName: "",
-    password: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData((prevData) => {
-      return {
-        ...prevData,
-        [e.target.name]: e.target.value,
-      };
+    const { updateToken } = useContext(AuthContext);
+    const [formData, setFormData] = useState({
+        userName: "",
+        password: "",
     });
-  };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const res = await fetch("http://localhost:7777/api/users/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-    const data = await res.json();
-    console.log(data);
-  };
+    const navigate = useNavigate("/");
+
+    const handleChange = (e) => {
+        setFormData((prevData) => {
+            return {
+                ...prevData,
+                [e.target.name]: e.target.value,
+            };
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const res = await fetch("http://localhost:7777/api/users/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        });
+        const data = await res.json();
+        updateToken(data);
+        navigate("/");
+    };
 
   return (
     <div className="form-container">
