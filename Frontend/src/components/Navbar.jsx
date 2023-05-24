@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { FaHotjar } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { AuthContext } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
     const { token, updateToken } = useContext(AuthContext);
@@ -11,6 +12,11 @@ const Navbar = () => {
     useEffect(() => {
         setIsLoggedIn(!!token);
     }, [token]);
+
+    const handleLogout = () => {
+        updateToken(null);
+        Navigate("/");
+    };
 
     return (
         <nav className="navbar">
