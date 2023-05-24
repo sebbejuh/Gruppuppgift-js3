@@ -91,3 +91,22 @@
         }
     }
 }
+
+
+.contact-button {
+
+    button:hover{
+        background-color: #8a2121;
+        opacity: 0.8;
+        cursor: pointer;
+    }
+}
+
+.contact-button {
+
+    button:active{
+        background-color: #441616;
+        opacity: 0.8;
+        cursor: pointer;
+    }
+}

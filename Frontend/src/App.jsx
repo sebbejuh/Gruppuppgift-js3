@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 
 //components
 import Navbar from "./components/Navbar";
+import Footer from "./components/footer";
 
 //sass files
 import "./index.scss";
@@ -33,7 +34,9 @@ const App = () => {
                         <Route path="products" element={<Products />} />
                         <Route path="contact" element={<Contact />} />
                         <Route path="cart" element={<Cart />} />
+                        
                     </Routes>
+                    <Footer/>
                 </div>
             </AuthProvider>
         </>

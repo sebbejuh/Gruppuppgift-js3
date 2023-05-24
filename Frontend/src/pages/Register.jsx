@@ -35,45 +35,47 @@ const Register = () => {
         navigate("/");
     };
 
-    return (
-        <div className="form-page">
-            <h1>Please Register Your new Account</h1>
-            <form onSubmit={handleSubmit} className="form-group">
-                <div className="form-group">
-                    <label htmlFor="userName">Username*</label>
-                    <input
-                        type="text"
-                        name="userName"
-                        value={formData.userName}
-                        onChange={handleChange}
-                    />
-                </div>
+  return (
+    <div className="form-container">
+      <div className="form-page">
+        <h1>Please Register Your new Account</h1>
+        <form onSubmit={handleSubmit} className="form-group">
+          <div className="form-group">
+            <label htmlFor="userName">Username*</label>
+            <input
+              type="text"
+              name="userName"
+              value={formData.userName}
+              onChange={handleChange}
+            />
+          </div>
 
-                <div className="form-group">
-                    <label htmlFor="password">Password*</label>
-                    <input
-                        type="password"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleChange}
-                    />
-                </div>
+          <div className="form-group">
+            <label htmlFor="password">Password*</label>
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+            />
+          </div>
 
-                <div className="policy">
-                    <input type="checkbox" name="policy"></input>
-                    <label className="terms" htmlFor="policy">
-                        I have read and accepts the terms and agrements
-                    </label>
-                </div>
+          <div className="policy">
+            <input type="checkbox" name="policy"></input>
+            <label className="terms" htmlFor="policy">
+              I have read and accepts the terms and agrements
+            </label>
+          </div>
 
-                <div className="already">
-                    <NavLink to="/login">Already have an account?</NavLink>
-                </div>
+          <div className="already">
+            <NavLink to="/login">Already have an account?</NavLink>
+          </div>
 
-                <button className="submit-btn">Submit</button>
-            </form>
-        </div>
-    );
+          <button className="submit-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default Register;
