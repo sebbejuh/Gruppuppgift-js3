@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const Navbar = () => {
     const { token, updateToken } = useContext(AuthContext);
     const [isLoggedIn, setIsLoggedIn] = useState(!!token);
-    const [userData, setUserData] = useState();
+    const [userData, setUserData] = useState({ userName: "Loading..." });
 
     const navigate = useNavigate();
 
@@ -21,7 +21,9 @@ const Navbar = () => {
                     },
                 });
                 const data = await res.json();
-                setUserData(data);
+                if (data && data.userName) {
+                    setUserData(data);
+                }
             } catch (error) {
                 console.log("Error fetching user data:", error);
             }
