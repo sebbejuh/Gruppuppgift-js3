@@ -39,7 +39,7 @@ const Navbar = () => {
                             {isLoggedIn ? "Welcome User" : "Login"}
                         </NavLink>
                     </li>
-                    {isLoggedIn && <li onClick={() => updateToken(null)}>Logout</li>}
+                    {isLoggedIn && <li onClick={handleLogout}>Logout</li>}
                     <li>
                         <NavLink to="/cart">
                             <FaShoppingCart />
