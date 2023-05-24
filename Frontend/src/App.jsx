@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 
 //components
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 //sass files
 import "./index.scss";
@@ -31,6 +32,7 @@ const App = () => {
             <Route path='contact' element={<Contact/>} />
             <Route path='cart' element={<Cart/>} />
         </Routes>
+    <Footer/>
     </div>
     </>
   )

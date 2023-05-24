@@ -1,3 +1,10 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+
 .form-page {
     display: flex;
     justify-content: center;
@@ -5,6 +12,7 @@
     flex-direction: column;
     padding: 1.5rem;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    width: 60%;
 }
 
 .form-group {
@@ -50,4 +58,16 @@
     font-size: 15px;
     width: 6rem;
     height: 2.5rem;
+}
+
+.submit-btn:hover {
+    background-color: #8a2121;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.submit-btn:active {
+    background-color: #441616;
+    opacity: 0.8;
+    cursor: pointer;
 }
