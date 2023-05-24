@@ -1,11 +1,6 @@
-.login-container{
-  display: flex;
-  justify-content: center;
-  .login-form-box {
+.login-form-box {
   padding: 2rem;
   box-shadow: 0px 10px 15px -3px rgba(164, 164, 164, 0.1);
-  width: 60%;
- 
 
   .login-title {
     font-size: 0.8rem;
@@ -101,4 +96,14 @@
   }
 }
 
+.login-btn:hover {
+  background-color: #8a2121;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.login-btn:active {
+  background-color: #441616;
+  opacity: 0.8;
+  cursor: pointer;
 }
