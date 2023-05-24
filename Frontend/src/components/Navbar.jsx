@@ -20,7 +20,6 @@ const Navbar = () => {
                         Authorization: `Bearer ${token}`,
                     },
                 });
-                console.log(token);
                 const data = await res.json();
                 if (data) {
                     setUser(data);
