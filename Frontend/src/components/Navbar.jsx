@@ -1,13 +1,8 @@
-<<<<<<< Updated upstream
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-=======
-import { Link, NavLink, useLocation } from "react-router-dom";
->>>>>>> Stashed changes
 import { FaHotjar } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { AuthContext } from "../context/AuthContext";
-import { useContext, useEffect, useState } from "react";
 
 const Navbar = () => {
     const { token, updateToken } = useContext(AuthContext);
@@ -33,7 +28,7 @@ const Navbar = () => {
                     <li>
                         <NavLink to="/contact">Contact</NavLink>
                     </li>
-                    <li className="d-flex">
+                    <li>
                         <NavLink to={isLoggedIn ? "/user-details" : "/login"}>
                             {isLoggedIn ? "Welcome User" : "Login"}
                         </NavLink>

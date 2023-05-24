@@ -1,19 +1,7 @@
-<<<<<<< Updated upstream
-import React from "react";
-import { NavLink } from "react-router-dom";
-
-const Login = () => {
-  return (
-    <div>
-      <h1>Login</h1>
-      <h2>Register</h2>
-      <NavLink to="/register">Go to register</NavLink>
-    </div>
-  );
-=======
 import { useContext, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, Navigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     const { updateToken } = useContext(AuthContext);
@@ -92,7 +80,6 @@ const Login = () => {
             </form>
         </div>
     );
->>>>>>> Stashed changes
 };
 
 export default Login;
