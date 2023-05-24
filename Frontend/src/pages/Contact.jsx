@@ -1,5 +1,3 @@
-
-
 const Contact = () => {
     return (
         <div className="contact-form-box">
