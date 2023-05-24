@@ -16,14 +16,14 @@ const footer = () => {
         <div class="footer-col">
           <h4>get help</h4>
           <ul>
-            <li><NavLink>shipping</NavLink></li>
-            <li><NavLink>order status</NavLink></li>
+            <li><NavLink to="/cart">shipping</NavLink></li>
+            <li><NavLink to="/cart">order status</NavLink></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>online shop</h4>
           <ul>
-            <li><NavLink>Fruits</NavLink></li>
+            <li><NavLink to="/products">Fruits</NavLink></li>
             <li><NavLink>Fruit Details</NavLink></li>
           </ul>
         </div>
