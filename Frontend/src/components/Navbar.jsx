@@ -8,11 +8,27 @@ import { useNavigate } from "react-router-dom";
 const Navbar = () => {
     const { token, updateToken } = useContext(AuthContext);
     const [isLoggedIn, setIsLoggedIn] = useState(!!token);
+    const [userData, setUserData] = useState();
 
     const navigate = useNavigate();
 
     useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                const res = await fetch("http://localhost:7777/api/users/me", {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+                const data = await res.json();
+                setUserData(data);
+            } catch (error) {
+                console.log("Error fetching user data:", error);
+            }
+        };
+
         setIsLoggedIn(!!token);
+        fetchUserData();
     }, [token]);
 
     const handleLogout = () => {
@@ -38,7 +54,7 @@ const Navbar = () => {
                     </li>
                     <li>
                         <NavLink to={isLoggedIn ? "/user-details" : "/login"}>
-                            {isLoggedIn ? "Welcome User" : "Login"}
+                            {isLoggedIn ? `Welcome ${userData?.userName}` : "Login"}
                         </NavLink>
                     </li>
                     {isLoggedIn && <li onClick={handleLogout}>Logout</li>}
