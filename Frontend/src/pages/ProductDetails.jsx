@@ -1,18 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import {Link} from 'react-router-dom';
-import { NavLink } from 'react-router-dom'
-import { FaHotjar } from "react-icons/fa";
+
+
+
 
 const ProductDetails = () => {
-  //cart stuff
-  
-  const [cartProducts, setCartProducts] = useState([]);
-  //ska läggas till på produkt card på en button 
-  const addProductToCart = (product) => {
-    const newProduct = { ...product, quantity: 1 };
-    setCartProducts([...cartProducts, newProduct]);
-  };
 
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -49,7 +41,7 @@ const ProductDetails = () => {
           <div className="details-container-2-2">
             <p>{product.price} kr</p>
             <h4>
-              <button onClick={() => addProductToCart(product)} ></button>
+              <button>Add to cart</button>
             </h4>
           </div>
         </div>

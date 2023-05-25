@@ -34,7 +34,6 @@ const Products = () => {
               <h4>
                 <Link to={`/products/${product._id}`}>Details</Link>
               </h4>
-          
             </div>
           )
         )}

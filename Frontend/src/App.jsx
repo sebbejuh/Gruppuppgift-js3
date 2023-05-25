@@ -24,6 +24,7 @@ import { AuthProvider } from "./context/AuthContext";
 const App = () => {
   // const [user, setUser] = useState(null);
 
+
   return (
     <>
       <AuthProvider>
