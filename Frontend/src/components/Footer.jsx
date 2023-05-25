@@ -1,4 +1,3 @@
-import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { FaHotjar } from "react-icons/fa";
 
@@ -24,7 +23,7 @@ const footer = () => {
           <h4>online shop</h4>
           <ul>
             <li><NavLink to="/products">Fruits</NavLink></li>
-            <li><NavLink>Fruit Details</NavLink></li>
+            <li><NavLink to="/products">Products</NavLink></li>
           </ul>
         </div>
       </div>

@@ -1,14 +1,23 @@
 .details-container-main{
     display: flex;
     justify-content: center;
+    width: 50%;
+    margin-left: 25%;
+    padding-bottom: 2%;
     .details-container-1{
-        width: 500px;
-        height: 500px;
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
         margin-right: 5%;
+        img{
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+        }
     }
     .details-container-2{
-        width: 500px;
-        height: 500px;
+        width: 600px;
+        height: 400px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -43,8 +52,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
+    height: 20vh;
     width: 100%;
-    background-color: #ccd1d9;
+    background-color: #c9c9c984;
     margin-bottom: 5%;
 }
