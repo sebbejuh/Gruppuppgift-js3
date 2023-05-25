@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaHotjar } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
@@ -8,11 +8,29 @@ import { useNavigate } from "react-router-dom";
 const Navbar = () => {
     const { token, updateToken } = useContext(AuthContext);
     const [isLoggedIn, setIsLoggedIn] = useState(!!token);
+    const [user, setUser] = useState({});
 
     const navigate = useNavigate();
 
     useEffect(() => {
-        setIsLoggedIn(!!token);
+        const fetchUserData = async () => {
+            try {
+                const res = await fetch("http://localhost:7777/api/users/me", {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+                const data = await res.json();
+                if (data) {
+                    setUser(data);
+                }
+                setIsLoggedIn(!!token);
+            } catch (error) {
+                console.log("Error fetching user data:", error);
+            }
+        };
+
+        fetchUserData();
     }, [token]);
 
     const handleLogout = () => {
@@ -22,7 +40,7 @@ const Navbar = () => {
 
     return (
         <nav className="navbar">
-            <div className="container d-flex">
+            <div className="navbar-div">
                 <Link to="/" className="brand">
                     <FaHotjar /> <span>Fruits</span>
                 </Link>
@@ -37,9 +55,11 @@ const Navbar = () => {
                         <NavLink to="/contact">Contact</NavLink>
                     </li>
                     <li>
-                        <NavLink to={isLoggedIn ? "/user-details" : "/login"}>
-                            {isLoggedIn ? "Welcome User" : "Login"}
-                        </NavLink>
+                        {isLoggedIn ? (
+                            <NavLink to="/user-details">{user?.userName}</NavLink>
+                        ) : (
+                            <NavLink to="/login">Login</NavLink>
+                        )}
                     </li>
                     {isLoggedIn && <li onClick={handleLogout}>Logout</li>}
                     <li>

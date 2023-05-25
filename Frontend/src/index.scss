@@ -9,9 +9,12 @@ html, body {
 }
 
 .container {
+    display:flex;
+    flex-direction: column;
     width: 100%;
     margin: 0 auto;
-    height: 7rem;
+    min-height: 79.65vh; // one of the attributes that stops footer from covering products and so on.
+    position: relative;
 }
 
 .d-flex {

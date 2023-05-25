@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { NavLink, Navigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
@@ -31,7 +31,7 @@ const Login = () => {
             body: JSON.stringify(loginData),
         });
         const data = await res.json();
-        updateToken(data);
+        updateToken(data.token);
         navigate("/");
     };
 
@@ -46,7 +46,7 @@ const Login = () => {
                     <div className="register-link">
                         <label htmlFor="userName">Username*</label>
                         <NavLink to="/register" className="link">
-                            <span>Don't have an Account yet?</span>
+                            <span>Do you want to register?</span>
                         </NavLink>
                     </div>
                     <input

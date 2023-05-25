@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 // import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
@@ -15,6 +15,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Products from "./pages/Products";
+import ProductDetails from './pages/ProductDetails';
 import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import { AuthProvider } from "./context/AuthContext";
@@ -35,9 +36,10 @@ const App = () => {
                         <Route path="contact" element={<Contact />} />
                         <Route path="cart" element={<Cart />} />
                         
+                        <Route path="/products/:id" element={<ProductDetails/>} />
                     </Routes>
-                    <Footer/>
                 </div>
+                <Footer/>
             </AuthProvider>
         </>
     );
