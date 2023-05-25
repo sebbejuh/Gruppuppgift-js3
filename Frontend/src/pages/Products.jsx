@@ -2,14 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Products = () => {
-  //cart stuff
-  const [cartProducts, setCartProducts] = useState([]);
-  //ska läggas till på produkt card på en button (onClick={addProductToCart})
-  const addProductToCart = (product) => {
-    const newProduct = { ...product, quantity: 1 };
-    setCartProducts([...cartProducts, newProduct]);
-  };
-
+  
   const [products, setProducts] = useState([]); //using useState hook to create products state variable as an array
 
   useEffect(() => {
@@ -41,7 +34,7 @@ const Products = () => {
               <h4>
                 <Link to={`/products/${product._id}`}>Details</Link>
               </h4>
-              <button onClick={() => addProductToCart(product)}>Add to cart</button>
+          
             </div>
           )
         )}
