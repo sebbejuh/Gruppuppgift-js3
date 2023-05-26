@@ -26,14 +26,21 @@ const UserDetails = () => {
     console.log(orders)
   return (
     <>
-      <div className='products-container-1'>
+      <div className='user-container-1'>
+        <h1>Your Orders</h1>
           {orders.map(order => (
-            <div className='products-container-2' key={order.id}>
-              <h2>{order.user}</h2>
-              <h3>{order.status.status}</h3>
+            <div className='user-container-2' key={order.id}>
+              <h3 className='user-orderId'>Order Number: <span>{order._id}</span></h3>
+              {/* <h3 className='user-userId'>Your user ID: <span>{order.user}</span></h3> */}
+              <h3 className='user-status'>Order Status: <span>{order.status.status}</span></h3>
+            {order.orderRows.map(orderRow => (
+              <div className='user-productInfo' key={orderRow.id}>
+              <p>{orderRow.quantity} {orderRow.product.name}s at {orderRow.product.price}kr per</p>
+              
             </div>
-          ))
-          }
+            ))}
+            </div>
+          ))}
       </div>
     </>
   );
