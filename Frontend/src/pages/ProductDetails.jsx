@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {Link} from 'react-router-dom';
-import { NavLink } from 'react-router-dom'
-import { FaHotjar } from "react-icons/fa";
+
 
 const ProductDetails = () => {
     const {id} = useParams();

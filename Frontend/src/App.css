@@ -473,8 +473,8 @@
   padding-bottom: 5px;
 }
 .products-container-1 .products-container-2 img {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
 }
