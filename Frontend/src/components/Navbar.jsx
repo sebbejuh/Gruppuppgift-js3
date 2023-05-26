@@ -56,7 +56,7 @@ const Navbar = () => {
                     </li>
                     <li>
                         {isLoggedIn ? (
-                            <NavLink to="/user-details">{user?.userName}</NavLink>
+                            <NavLink to="/userDetails">{user?.userName}</NavLink>
                         ) : (
                             <NavLink to="/login">Login</NavLink>
                         )}
