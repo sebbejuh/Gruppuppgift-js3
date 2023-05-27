@@ -20,6 +20,7 @@ import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import UserDetails from "./pages/userDetails";
 import { AuthProvider } from "./context/AuthContext";
+import NotFound from './pages/NotFound';
 
 const App = () => {
     // const [user, setUser] = useState(null);
@@ -31,13 +32,14 @@ const App = () => {
                 <div className="container">
                     <Routes>
                         <Route index element={<Home />} />
-                        <Route path="login" element={<Login />} />
-                        <Route path="register" element={<Register />} />
-                        <Route path="products" element={<Products />} />
-                        <Route path="contact" element={<Contact />} />
-                        <Route path="cart" element={<Cart />} />
-                        <Route path="userDetails" element={<UserDetails />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/register" element={<Register />} />
+                        <Route path="/products" element={<Products />} />
+                        <Route path="/contact" element={<Contact />} />
+                        <Route path="/cart" element={<Cart />} />
+                        <Route path="/userDetails" element={<UserDetails />} />
                         <Route path="/products/:id" element={<ProductDetails/>} />
+                        <Route path="*" element={<NotFound/>} />
                     </Routes>
                 </div>
                 <Footer/>
