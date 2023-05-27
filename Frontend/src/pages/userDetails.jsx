@@ -1,10 +1,17 @@
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const UserDetails = () => {
     const [orders, setOrders] = useState([]);
-    const { token } = useContext(AuthContext);
-    
+    const { token } = useContext(AuthContext);  //getting token
+    const navigate = useNavigate();
+
+    if(token === null){ //if token is null / user not logged in - redirect to homepage
+      navigate("/");
+    }
+
+
     useEffect(() => {
         const fetchOrders = async () => {
             try {
