@@ -15,7 +15,7 @@ const Products = () => {
                 console.error(error);
             });
     }, []);
-
+    console.log(products)
   return (
     <>
       <div className='products-container-1'>
