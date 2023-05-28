@@ -17,7 +17,7 @@ const ProductDetails = () => {
           console.error(error);
         });
     }, [id]);
-    console.log(product)
+    // console.log(product)
     if (!product) {
         return <div>Loading...</div>
     }
