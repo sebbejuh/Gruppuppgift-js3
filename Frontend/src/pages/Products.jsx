@@ -15,12 +15,12 @@ const Products = () => {
                 console.error(error);
             });
     }, []);
-
+    // console.log(products)
   return (
     <>
       <div className='products-container-1'>
           {products.map(product => (      //using map to go through the array and display products within html elements
-            <div className='products-container-2' key={product.id}>
+            <div className='products-container-2' key={product._id}>
               <img src={product.imageURL}></img>
               <h3>{product.name}</h3>
               {/* <p>{product.description}</p> */}

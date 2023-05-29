@@ -473,8 +473,8 @@
   padding-bottom: 5px;
 }
 .products-container-1 .products-container-2 img {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -558,6 +558,64 @@
   width: 100%;
   background-color: rgba(201, 201, 201, 0.5176470588);
   margin-bottom: 5%;
+}
+
+.user-container-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 60%;
+  margin-left: 35%;
+  margin-right: 30%;
+  margin-top: 5vh;
+  width: 30vw;
+}
+.user-container-1 h1 {
+  margin-left: 35%;
+  padding-bottom: 2vh;
+}
+.user-container-1 .user-container-2 {
+  background-color: rgba(201, 201, 201, 0.5176470588);
+  border-radius: 10px;
+  border-color: black;
+  border-style: solid;
+  padding: 5%;
+  margin: 1%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10%;
+}
+.user-container-1 .user-container-2 .user-userId {
+  font-style: italic;
+}
+.user-container-1 .user-container-2 .user-userId span {
+  font-style: normal;
+  font-size: medium;
+}
+.user-container-1 .user-container-2 .user-status {
+  font-style: italic;
+}
+.user-container-1 .user-container-2 .user-status span {
+  color: green;
+  text-decoration: underline;
+  font-style: normal;
+  font-size: larger;
+}
+.user-container-1 .user-container-2 .user-orderId {
+  font-style: italic;
+}
+.user-container-1 .user-container-2 .user-orderId span {
+  font-style: normal;
+}
+.user-container-1 .user-container-2 .user-productInfo {
+  background-color: white;
+  padding: 5px;
+  margin-top: 5px;
+}
+.user-container-1 .user-container-2 .user-productInfo p {
+  color: black;
+  font-weight: bold;
 }
 
 * {
