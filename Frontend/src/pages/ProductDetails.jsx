@@ -1,9 +1,18 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import {Link} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../store/shoppingCartSlice'
+
 
 
 const ProductDetails = () => {
+
+  const dispatch = useDispatch();
+
+  const addProductToCart = () => {
+    dispatch(addToCart(product));
+  };
+
 
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -40,7 +49,7 @@ const ProductDetails = () => {
           <div className="details-container-2-2">
             <p>{product.price} kr</p>
             <h4>
-              <button>Add to cart</button>
+              <button onClick={() => dispatch(addToCart(product))}>Add to cart</button>
             </h4>
           </div>
         </div>

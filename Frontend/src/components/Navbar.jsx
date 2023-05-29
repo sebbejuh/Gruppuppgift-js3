@@ -5,6 +5,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
+
 const Navbar = () => {
   const { token, updateToken } = useContext(AuthContext);
   const [isLoggedIn, setIsLoggedIn] = useState(!!token);
@@ -38,39 +39,39 @@ const Navbar = () => {
     navigate("/");
   };
 
-    return (
-        <nav className="navbar">
-            <div className="navbar-div">
-                <Link to="/" className="brand">
-                    <FaHotjar /> <span>Fruits</span>
-                </Link>
-                <ul className="nav-links d-flex">
-                    <li>
-                        <NavLink to="/">Home</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/products">Products</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/contact">Contact</NavLink>
-                    </li>
-                    <li>
-                        {isLoggedIn ? (
-                            <NavLink to="/userDetails">{user?.userName}</NavLink>
-                        ) : (
-                            <NavLink to="/login">Login</NavLink>
-                        )}
-                    </li>
-                    {isLoggedIn && <li onClick={handleLogout}>Logout</li>}
-                    <li>
-                        <NavLink to="/cart">
-                            <FaShoppingCart />
-                        </NavLink>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    );
+  return (
+    <nav className="navbar">
+      <div className="navbar-div">
+        <Link to="/" className="brand">
+          <FaHotjar /> <span>Fruits</span>
+        </Link>
+        <ul className="nav-links d-flex">
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/products">Products</NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact">Contact</NavLink>
+          </li>
+          <li>
+            {isLoggedIn ? (
+              <NavLink to="/userDetails">{user?.userName}</NavLink>
+            ) : (
+              <NavLink to="/login">Login</NavLink>
+            )}
+          </li>
+          {isLoggedIn && <li onClick={handleLogout}>Logout</li>}
+          <li>
+            <NavLink to="/cart">
+              <FaShoppingCart />
+            </NavLink>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
