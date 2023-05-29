@@ -1,6 +1,6 @@
 // import React from 'react'
 // import { useState } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes } from "react-router-dom";
 
 //components
 import Navbar from "./components/Navbar";
@@ -15,37 +15,41 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Products from "./pages/Products";
-import ProductDetails from './pages/ProductDetails';
+import ProductDetails from "./pages/ProductDetails";
 import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import UserDetails from "./pages/userDetails";
 import { AuthProvider } from "./context/AuthContext";
-import NotFound from './pages/NotFound';
+import NotFound from "./pages/NotFound";
+import { store } from "./store";
+import { Provider } from "react-redux";
 
 const App = () => {
-    // const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
 
-    return (
-        <>
-            <AuthProvider>
-                <Navbar />
-                <div className="container">
-                    <Routes>
-                        <Route index element={<Home />} />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/register" element={<Register />} />
-                        <Route path="/products" element={<Products />} />
-                        <Route path="/contact" element={<Contact />} />
-                        <Route path="/cart" element={<Cart />} />
-                        <Route path="/userDetails" element={<UserDetails />} />
-                        <Route path="/products/:id" element={<ProductDetails/>} />
-                        <Route path="*" element={<NotFound/>} />
-                    </Routes>
-                </div>
-                <Footer/>
-            </AuthProvider>
-        </>
-    );
+  return (
+    <>
+      <AuthProvider>
+        <Provider store={store}>
+        <Navbar />
+        <div className="container">
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/userDetails" element={<UserDetails />} />
+            <Route path="/products/:id" element={<ProductDetails />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
+        <Footer />
+        </Provider>
+      </AuthProvider>
+    </>
+  );
 };
 
 export default App;

@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
-import {Link} from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Products = () => {
-    const [products, setProducts] = useState([]); //using useState hook to create products state variable as an array
+  
+  const [products, setProducts] = useState([]); //using useState hook to create products state variable as an array
 
     useEffect(() => {
         //using hook
@@ -24,13 +25,17 @@ const Products = () => {
               <img src={product.imageURL}></img>
               <h3>{product.name}</h3>
               {/* <p>{product.description}</p> */}
-              <p>PRICE: <span>{product.price} kr</span></p>
-              <h4><Link to={`/products/${product._id}`}>Details</Link></h4>
+              <p>
+                PRICE: <span>{product.price} kr</span>
+              </p>
+              <h4>
+                <Link to={`/products/${product._id}`}>Details</Link>
+              </h4>
             </div>
-          ))
-          }
+          )
+        )}
       </div>
     </>
   );
-}
-export default Products
+};
+export default Products;
