@@ -6,14 +6,9 @@ import { useSelector} from 'react-redux'
 
 
 
-const Cart = ( {checkout} ) => {
-  // console.log(useSelector(state => state.shoppingCart.cartItems))
+const Cart = () => {
   
   const cart  = useSelector(state => state.shoppingCart.cartItems)
-  // const dispatch = useDispatch()
-
-  // console.log(cart)
-
 
   return (
     <div>
@@ -22,9 +17,8 @@ const Cart = ( {checkout} ) => {
           Your cart is empty
         </div>
         )}
-        { cart.map(item => <CartProduct key={crypto.randomUUID} item={item} />)}
+        { cart.map(item => <CartProduct key={'cart' + item._id} item={item} />)}
         <div className="total">
-          {/* <CartProduct /> */}
           <p>Total price: kr</p>
           <p>Tax and shipping calcuated at checkout</p>
         </div>

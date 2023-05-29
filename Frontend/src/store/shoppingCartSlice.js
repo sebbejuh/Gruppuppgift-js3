@@ -7,17 +7,18 @@ const intialState = {
     totalQuantity: 0
 }
 
-const getTotalQuantity = (cart) => {
+const getTotalQuantity = (cartItems) => {
     let total = 0
-    cart.forEach(item => {
+    cartItems.forEach(item => {
       total += item.quantity
     })
     return total
 }
 
-const getTotalAmount = (cart) => {
+const getTotalAmount = (cartItems) => {
     let amount = 0
-    cart.forEach(item => {
+    
+    cartItems.forEach(item => {
       amount += item.price * item.quantity
     })
     return amount
@@ -29,38 +30,36 @@ export const shoppingCartSlice = createSlice({
     initialState: intialState,
     reducers: {
         addToCart: (state, action) => {
-            const itemRef = state.cartItems.find(item => item._id === action.payload._id);
-            
-            itemRef ? itemRef.quantity += 1 : state.cartItems.push({...action.payload, quantity: 1});
+            const itemRef = state.cartItems.find(item => item._id === action.payload);
+ 
+            itemRef 
+            ? itemRef.quantity += 1 
+            : state.cartItems = [...state.cartItems, {...action.payload, quantity: 1}];
 
             state.totalAmount = getTotalAmount(state.cartItems);
             state.totalQuantity = getTotalQuantity(state.cartItems);
         },
         removeOne: (state, action) => {
+            const itemRef = state.cartItems.find(item => item._id === action.payload)
             itemRef.quantity <= 1
-      ? state.cart = state.cart.filter(item => item.product._id !== action.payload)
-      : itemRef.quantity -= 1
+            ? state.cartItems = state.cartItems.filter(item => item._id !== action.payload)
+            : itemRef.quantity -= 1
 
-      state.totalAmount = getTotalAmount(state.cart)
-      state.totalQuantity = getTotalQuantity(state.cart)
+      state.totalAmount = getTotalAmount(state.cartItems)
+      state.totalQuantity = getTotalQuantity(state.cartItems)
     },
     removeAll : (state, action) => {
         // action.payload = id
-        state.cart = state.cart.filter(item => item.product._id !== action.payload)
-        state.totalAmount = getTotalAmount(state.cart)
-        state.totalQuantity = getTotalQuantity(state.cart)
+        state.cartItems = state.cartItems.filter(item => item._id !== action.payload)
+        state.totalAmount = getTotalAmount(state.cartItems)
+        state.totalQuantity = getTotalQuantity(state.cartItems)
       },
       clearCart: (state) => {
         state.cart = []
-        state.totalAmount = getTotalAmount(state.cart)
-        state.totalQuantity = getTotalQuantity(state.cart)
+        state.totalAmount = getTotalAmount(state.cartItems)
+        state.totalQuantity = getTotalQuantity(state.cartItems)
       },
-      placeOrder: (state) => {
-        // Skulle behöva vara en async thunk
-        const order = state.cart.map(item => {
-        return { id: item.product._id, quantity: item.quantity }
-        })
-}
+    
     }
 });
 export const { addToCart, removeOne, removeAll, clearCart } = shoppingCartSlice.actions;
