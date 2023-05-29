@@ -21,4 +21,9 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.not-found {
+  margin-top: 5%;
+  margin-left: 43%;
 }/*# sourceMappingURL=index.css.map */
