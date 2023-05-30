@@ -2,19 +2,25 @@ import { createContext, useState } from "react";
 
 const AuthContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 const AuthProvider = ({ children }) => {
-    const localStorageObject = JSON.parse(localStorage.getItem("token"));
-
-    //access token or setToken, if there is Token in localStorage will set Token to Token otherwise will to Null;
-    const [token, setToken] = useState(localStorageObject || null);
-
-    //update token function that can SET or Remove Token
+    //gets token from localstorage and stores it in localStorageObject
+    const localStorageObject = localStorage.getItem("token");
+    //checks if token is not an "undefined" string (it happens if you log in with incorrect user or password)
+    const initialToken = localStorageObject != "undefined" ? JSON.parse(localStorageObject) : null;
+    //define state and set funcion & make sure token exists and isn't null
+    const [token, setToken] = useState(initialToken?.token || null);
+  
     const updateToken = (newToken) => {
-        setToken(newToken);
-        localStorage.setItem("token", JSON.stringify(newToken));
+      setToken(newToken);
+      localStorage.setItem("token", JSON.stringify(newToken));
     };
-
-    return <AuthContext.Provider value={{ token, updateToken }}>{children}</AuthContext.Provider>;
+  
+    return (
+      <AuthContext.Provider value={{ token, updateToken }}>
+        {children}
+      </AuthContext.Provider>
+    );
 };
 
 export { AuthContext, AuthProvider };
