@@ -49,7 +49,7 @@ const ProductDetails = () => {
           <div className="details-container-2-2">
             <p>{product.price} kr</p>
             <h4>
-              <button onClick={() => dispatch(addToCart(product))}>Add to cart</button>
+              <button className='add-cart' onClick={() => dispatch(addToCart(product))}>Add to cart</button>
             </h4>
           </div>
         </div>

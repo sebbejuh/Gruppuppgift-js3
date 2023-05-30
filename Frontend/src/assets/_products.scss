@@ -44,7 +44,11 @@
             font-size: large;
             font-weight: bold;
             border-radius: 50px 20px 50px 20px;
+            &:hover{
+                color: #474747;
+            }
             
         }
+
     }
 }

@@ -30,7 +30,7 @@ export const shoppingCartSlice = createSlice({
     initialState: intialState,
     reducers: {
         addToCart: (state, action) => {
-            const itemRef = state.cartItems.find(item => item._id === action.payload);
+            const itemRef = state.cartItems.find(item => item._id === action.payload._id);
  
             itemRef 
             ? itemRef.quantity += 1 
