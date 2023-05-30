@@ -29,6 +29,7 @@ export const shoppingCartSlice = createSlice({
     reducers: {
         addToCart: (state, action) => {
             const itemRef = state.cartItems.find(item => item._id === action.payload._id);
+            
  
             itemRef 
             ? itemRef.quantity += 1 
@@ -53,7 +54,7 @@ export const shoppingCartSlice = createSlice({
             state.totalQuantity = getTotalQuantity(state.cartItems);
         },
         clearCart: (state) => {
-            state.cart = [];
+            state.cartItems = [];
             state.totalAmount = getTotalAmount(state.cartItems);
             state.totalQuantity = getTotalQuantity(state.cartItems);
         },

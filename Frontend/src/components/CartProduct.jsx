@@ -9,7 +9,7 @@ const CartProduct = ({ item }) => {
   const dispatch = useDispatch()
 
   const add = () => {
-    dispatch(addToCart(item._id))
+    dispatch(addToCart(item))
   }
 
   const remove = () => {
