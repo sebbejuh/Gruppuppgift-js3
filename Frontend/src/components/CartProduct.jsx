@@ -9,7 +9,7 @@ const CartProduct = ({ item }) => {
   const dispatch = useDispatch()
 
   const add = () => {
-    dispatch(addToCart(item._id))
+    dispatch(addToCart(item))
   }
 
   const remove = () => {
@@ -22,21 +22,21 @@ const CartProduct = ({ item }) => {
 
   return (
     <div className='cart-product-container'>
-      <div>
-        <img src={item.imageURL} alt={item.name} className='cart-img' />
+      <div className='cart-row'>
+          <img src={item.imageURL} alt={item.name} className='cart-img' />
         <div>
-          <p>{item.name}</p>
-          <small>{item.quantity} x {item.price}</small>
+          <p className='cart-item-name'>{item.name}</p>
+          <small className='cart-quantity'>{item.quantity} x {item.price}</small>
         </div>
       </div>
-
-      
-      <div>
-        <button className='remove-btn' onClick={del}><FaTrash /></button>
-      </div>
-      <div>
-        <button className='add-btn' onClick={add}>+</button>
-        <button className='subtract-btn' onClick={remove}>-</button>
+      <div className='cart-buttons'>
+        <div>
+          <button className='remove-btn' onClick={del}><FaTrash /></button>
+        </div>
+        <div>
+          <button className='add-btn' onClick={add}>+</button>
+          <button className='subtract-btn' onClick={remove}>-</button>
+        </div>
       </div>
     </div>
   )
