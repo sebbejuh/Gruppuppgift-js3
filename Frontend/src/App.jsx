@@ -25,31 +25,31 @@ import { store } from "./store";
 import { Provider } from "react-redux";
 
 const App = () => {
-  // const [user, setUser] = useState(null);
+    // const [user, setUser] = useState(null);
 
-  return (
-    <>
-      <AuthProvider>
-        <Provider store={store}>
-        <Navbar />
-        <div className="container">
-          <Routes>
-            <Route index element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/userDetails" element={<UserDetails />} />
-            <Route path="/products/:id" element={<ProductDetails />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
-        <Footer />
-        </Provider>
-      </AuthProvider>
-    </>
-  );
+    return (
+        <>
+            <AuthProvider>
+                <Provider store={store}>
+                    <Navbar />
+                    <div className="container">
+                        <Routes>
+                            <Route index element={<Home />} />
+                            <Route path="/login" element={<Login />} />
+                            <Route path="/register" element={<Register />} />
+                            <Route path="/products" element={<Products />} />
+                            <Route path="/contact" element={<Contact />} />
+                            <Route path="/cart" element={<Cart />} />
+                            <Route path="/userDetails" element={<UserDetails />} />
+                            <Route path="/products/:id" element={<ProductDetails />} />
+                            <Route path="*" element={<NotFound />} />
+                        </Routes>
+                    </div>
+                    <Footer />
+                </Provider>
+            </AuthProvider>
+        </>
+    );
 };
 
 export default App;
